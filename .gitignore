@@ -17,7 +17,13 @@ possession_by_frame.pkl
 # -- submissions -------------------------------------------------------------------------------
 # Any file in results/ is a set of labels for the whole match. A perfect one is a copy of the
 # ground truth, so the folder ships empty and stays that way.
-evaluation/results/*.csv
+# -- cache and intermediate arrays -------------------------------------------------------------
+cache/
+*.npz
+
+# Any generated CSV is ignored so restricted match data or submissions are never committed.
+*.csv
+!evaluation/gt/*_possession_gt_public.csv
 
 # ...with one deliberate exception. The baselines are computed from the ATD alone -- the same ATD
 # every enrolled participant has -- and never read a ground truth of any kind, so they carry no
